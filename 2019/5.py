@@ -12,8 +12,6 @@ def parse_opcode(op):
 
 pc = 0
 
-input_v = 5
-
 while True:
 	mode3, mode2, mode1, op = parse_opcode(mem[pc])
 	if op == 99:
@@ -38,7 +36,7 @@ while True:
 		mem[opr3] = param1 * param2
 		inc = 4
 	elif op == 3:
-		mem[opr1] = input_v
+		mem[opr1] = int(input()) # 5 for part 5
 		inc = 2
 	elif op == 4:
 		print(param1)
